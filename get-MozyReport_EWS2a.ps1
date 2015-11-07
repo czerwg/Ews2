@@ -37,10 +37,6 @@ if (!(Test-Path $downloadDirectory)){
     Write-Warning "Please create folder $downloadDirectory"
     break
 }
-#
-#
-#
-
 # Credentials were supplied as paramaters or not ?
 if (($User -eq "") -or ($PWord -eq "") ) {Write-Warning "No parameters specified or one is missing enter credentials now." 
 try{
@@ -184,9 +180,3 @@ else
 {
     Send-MailMessage -to $Recipients -from $AccountWithImpersonationRights -Credential $pscred -SmtpServer smtp.office365.com -Port 587 -UseSsl -subject "Someone already looked at Mozy Backups?" -Body "No reports from Mozy to process, either someone already checked or report not delivered"
 }
-
-#
-#
-#
-#
-
